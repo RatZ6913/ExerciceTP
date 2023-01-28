@@ -8,14 +8,13 @@ if (!empty($_SERVER["QUERY_STRING"])) {
   $patientId = $_SERVER["QUERY_STRING"];
 }
 
-
 $profilOfThisPatient->execute(); // Puis je le compare avec les infos de l'user si c'est =id . parameters.php
 $showThisProfil = $profilOfThisPatient->fetch();
 
 if (empty($showThisProfil)) {
   // Message pour informer l'user que aucun patient a été sélectionner
   echo "<p style=color:red> Veuillez sélectionner un patient !</p>";
-  echo '<a href="./list-patients.php">Retour</a>';
+  echo '<a href="./list-patients.php">Liste des patients</a>';
   // Et si le patient n'existe pas je coupe le script
   die();
 }
@@ -58,6 +57,11 @@ $showDateOfPatient = $dateOfThisPatient->fetchAll();
     </div>
   </section>
 </body>
+
+
+
+
+
 
 
 

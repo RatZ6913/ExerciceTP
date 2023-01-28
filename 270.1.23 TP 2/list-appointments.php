@@ -26,8 +26,8 @@ $showAllAppointments = $getListAppointments->fetchAll();
       <div class="listOfpatients">
         <p><?= $key['dateHour']; ?></p>
         <p><?= $key['firstName']; ?></p>
-        <p><?= $key['lastName']; ?></p>
-        <a href="./appointments.php?<?= substr(md5($key['id']), 0, 6); ?>">Plus de détails</a>
+        <p><?= $key['lastName'];?></p>
+        <a href="./appointments.php?<?= $key['id']; ?>">Plus de détails</a>
         <a href="">Supprimer ce rendez-vous</a>
       </div>
     <?php

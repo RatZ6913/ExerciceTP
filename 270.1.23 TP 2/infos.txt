@@ -25,8 +25,8 @@ Crée PAGES :
     -> Permettre de supprimer d'un rdv
 
 	- appointments.php
-	  ->  Afficher toute infos d'un rdv. Doit être accessible depuis liste-appointments.php et afficher les infos du rdv sélectionner.
-    -> Permettre la modification de ce rdv
+	  -> // Afficher toute infos d'un rdv. Doit être accessible depuis liste-appointments.php et afficher les infos du rdv sélectionner.
+    -> // Permettre la modification de ce rdv
 
 ________________
 ________________

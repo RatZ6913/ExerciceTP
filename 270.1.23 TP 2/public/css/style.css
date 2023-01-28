@@ -14,13 +14,13 @@
 }
 
 /* // list-patients.php */
-#listPatients {
+.listPatients {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-#listPatients h1 {
+.listPatients h1 {
   width: 100%;
   text-align: center;
 }

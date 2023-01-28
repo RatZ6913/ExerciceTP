@@ -5,7 +5,6 @@ require_once __DIR__ . './core/database/parameters/parameters.php';
 $listOfPatients->execute();
 $showAllPatients = $listOfPatients->fetchAll();
 
-
 ?>
 
 <head>
@@ -16,7 +15,7 @@ $showAllPatients = $listOfPatients->fetchAll();
 <body>
   <?php require_once __DIR__ . './public/common/header.php'; ?>
   <a href="./add-patients.php">Ajouter un patient</a>
-  <section id="listPatients">
+  <section class="listPatients">
     <h1>Liste des patients</h1>
     <?php
     foreach ($showAllPatients as $key) {
@@ -25,7 +24,7 @@ $showAllPatients = $listOfPatients->fetchAll();
         <p> Nom : <?= $key['firstName']; ?></p>
         <p> Prénom : <?= $key['lastName']; ?></p>
         <!-- // J'envoie l'id du patient pour le récupérer dans : profil-patients.php. Et pouvoir le comparer -->
-        <a href="./profil-patients.php?<?= substr(md5($key['id']), 0, 6) ?>">Infos de <?= $key['firstName']; ?></a>
+        <a href="./profil-patients.php?<?= $key['id']; ?>">Infos de <?= $key['firstName']; ?></a>
       </div>
     <?php
     }

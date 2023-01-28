@@ -3,8 +3,8 @@
 const DB_HOST = "127.0.0.1";
 const DB_PORT = "3306";
 const DB_DATABASE = "hospitale2n";
-// const DB_NAME = ; 
-// const DB_PWD = ;
+// const DB_NAME = "root"; // Greta
+// const DB_PWD = ""; // Greta
 
 try {
   $pdo = new PDO(

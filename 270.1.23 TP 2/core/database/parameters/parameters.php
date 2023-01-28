@@ -64,7 +64,8 @@ $getListAppointments = $pdo->prepare("SELECT t1.dateHour, t2.id, t2.firstName, t
 // J'ÉXÉCUTE DANS LIST-APPOINTMENTS.PHP
 
 // AFFICHER TOUS LES RDV AVEC LE PATIENT CORRESPONDANT DANS : list-appointments.php
-$getInfosAppointments = $pdo->prepare("SELECT t1.dateHour, t2.* FROM appointments t1 INNER JOIN patients t2 ON t1.idPatients = t2.id");
+$getInfosAppointments = $pdo->prepare("SELECT t1.dateHour, t2.* FROM appointments t1 INNER JOIN patients t2 ON t1.idPatients = t2.id AND t2.id = :id");
+$getInfosAppointments->bindParam('id', $getId);
 // J'ÉXÉCUTE DANS LIST-APPOINTMENTS.PHP
 
 
