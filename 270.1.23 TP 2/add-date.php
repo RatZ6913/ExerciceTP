@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . './core/database/addDateDB.php';
+require_once __DIR__ . './core/database/addDateDB.php'; // Vérif Formulaire
 require_once __DIR__ . './core/database/parameters/parameters.php';
 
 ?>

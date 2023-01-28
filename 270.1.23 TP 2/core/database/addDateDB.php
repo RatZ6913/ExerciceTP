@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
       $getIdOfPatient->execute();
       $showId = $getIdOfPatient->fetch();
 
-      // Pour ensuite l'enregistrer dans une variable et la comparer
+      // Pour ensuite l'enregistrer dans une variable et la comparer (parameters.php)
       // avec la deuxième requête
       $id = $showId['id'];
       $insertPatientDate->execute();
@@ -75,20 +75,3 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
   }
 }
 
-// $lastName = 'Smith';
-// $firstName = 'John';
-// $email = 'john.smith@email.com';
-
-// $getIdOfPatient->execute();
-
-// $showId = $getIdOfPatient->fetch();
-
-// var_dump($showId);
-
-// echo $showId['id'];
-
-// $insertPatientDate->execute();
-// var_dump($insertPatientDate);
-
-// $insertNewDate = $insertPatientDate->fetch();
-// var_dump($insertNewDate);

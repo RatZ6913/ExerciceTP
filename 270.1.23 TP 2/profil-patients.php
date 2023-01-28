@@ -1,7 +1,11 @@
 <?php
 
-
 require_once __DIR__ . './core/database/parameters/parameters.php';
+
+// Liste de tous les rendez-vous de ce patient
+$dateOfThisPatient->execute();
+$showDateOfPatient = $dateOfThisPatient->fetchAll();
+
 
 // Je récupère le numéro de l'id, envoyé par le <a> : list-patients.php
 if (!empty($_SERVER["QUERY_STRING"])) {
@@ -13,21 +17,17 @@ $showThisProfil = $profilOfThisPatient->fetch();
 
 if (empty($showThisProfil)) {
   // Message pour informer l'user que aucun patient a été sélectionner
-  echo "<p style=color:red> Veuillez sélectionner un patient !</p>";
+  echo "<p style='color:red'> Veuillez sélectionner un patient !</p>";
   echo '<a href="./list-patients.php">Liste des patients</a>';
   // Et si le patient n'existe pas je coupe le script
   die();
 }
 
-// Liste de tous les rendez-vous de ce patient
-$dateOfThisPatient->execute();
-$showDateOfPatient = $dateOfThisPatient->fetchAll();
 
 ?>
 
 <head>
   <?php require_once __DIR__ . './public/common/head.php'; ?>
-  <link rel="stylesheet" href="./public/css/style.css">
   <title>Liste des patients</title>
 </head>
 

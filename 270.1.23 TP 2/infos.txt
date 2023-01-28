@@ -1,6 +1,6 @@
 Crée PAGES : 
 
-- index.php
+- //Fini! index.php
     */ Lien pour rediriger. Vers : 
             - //Fini! ajout-patients.php || (= Formulaire pour crée un patient et l'ajouter)
             - //Fini! ajout-rdv.php || (= Formulaire pour ajouter un rdv)
@@ -13,8 +13,8 @@ Crée PAGES :
                     *//Fini! ajout-patients.php (Qui est un formulaire)
                     *//Fini! profil-patients.php 
 
-            -> //Fini!// Afficher toutes les informations d'un patient. Et doit être accessible depuis liste-patients.php. Et Afficher infos du patient Sélectionner
-            -> //Fini!// Afficher toute ses informations de ses rdv
+            -> //Fini! Afficher toutes les informations d'un patient. Et doit être accessible depuis liste-patients.php. Et Afficher infos du patient Sélectionner
+            -> //Fini! Afficher toute ses informations de ses rdv
 
     -/* //Fini! liste-appointments.php
             -> //Fini! Afficher la liste des rdv. Un lien vers ajout-rdv.php
