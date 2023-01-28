@@ -1,39 +1,28 @@
 Crée PAGES : 
 
-	- index.php
-        */ Lien pour rediriger. Vers : 
-                    - //ajout-patients.php || (= Formulaire pour crée un patient et l'ajouter)
-                    - // ajout-rdv.php || (= Formulaire pour ajouter un rdv)
+- index.php
+    */ Lien pour rediriger. Vers : 
+            - //Fini! ajout-patients.php || (= Formulaire pour crée un patient et l'ajouter)
+            - //Fini! ajout-rdv.php || (= Formulaire pour ajouter un rdv)
 
-	      */ liste-patients.php 
-                    -> // Afficher liste des patients dans la page, et un lien vers ajout-patients.php
-                    -> Permettre de supprimer un patient et ses rdv
-                    -> Un champ de Recherche
-                    -> Créer une pagination
-                            *// ajout-patients.php (Qui est un formulaire)
-                            *// profil-patients.php 
+    */ liste-patients.php 
+            -> // Afficher liste des patients dans la page, et un lien vers ajout-patients.php
+            -> Permettre de supprimer un patient et ses rdv
+            -> Un champ de Recherche
+            -> Créer une pagination
+                    *//Fini! ajout-patients.php (Qui est un formulaire)
+                    *//Fini! profil-patients.php 
 
+            -> //Fini!// Afficher toutes les informations d'un patient. Et doit être accessible depuis liste-patients.php. Et Afficher infos du patient Sélectionner
+            -> //Fini!// Afficher toute ses informations de ses rdv
 
-                    -> // Afficher toutes les informations d'un patient. Et doit être accessible depuis liste-patients.php. Et Afficher infos du patient Sélectionner
-                    -> // Afficher toute ses informations de ses rdv
+    -/* //Fini! liste-appointments.php
+            -> //Fini! Afficher la liste des rdv. Un lien vers ajout-rdv.php
+            -> //Fini! Permettre de supprimer d'un rdv !!
 
-
-
-
-	- // liste-appointments.php
-    -> // Afficher la liste des rdv. Un lien vers ajout-rdv.php
-    -> // Permettre de supprimer d'un rdv !!
-
-	- appointments.php
-	  -> // Afficher toute infos d'un rdv. Doit être accessible depuis liste-appointments.php et afficher les infos du rdv sélectionner.
-    ->  Permettre la modification de ce rdv
-
-________________
-________________
-________________
-________________
-
-
+    -/* appointments.php
+	        -> //Fini! Afficher toute infos d'un rdv. Doit être accessible depuis liste-appointments.php et afficher les infos du rdv sélectionner.
+            ->  Permettre la modification de ce rdv
 
 
 

@@ -71,6 +71,12 @@ $getInfosAppointments->bindParam('id', $getId);
 // SUPPRIMER UN RENDEZ-VOUS DEPUIS : list-appointments.php 
 $deleteAppointments = $pdo->prepare("DELETE FROM appointments WHERE id = :id");
 $deleteAppointments->bindParam('id', $appointmentsId);
+// J'ÉXÉCUTE DANS LIST-APPOINTMENTS.PHP
+
+
+
+
+
 
 // Les stocker dans une classe plus tard, quand plus de maitrise
 
