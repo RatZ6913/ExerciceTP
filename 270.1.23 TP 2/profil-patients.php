@@ -8,6 +8,7 @@ if (!empty($_SERVER["QUERY_STRING"])) {
   $patientId = $_SERVER["QUERY_STRING"];
 }
 
+
 $profilOfThisPatient->execute(); // Puis je le compare avec les infos de l'user si c'est =id . parameters.php
 $showThisProfil = $profilOfThisPatient->fetch();
 
@@ -57,3 +58,6 @@ $showDateOfPatient = $dateOfThisPatient->fetchAll();
     </div>
   </section>
 </body>
+
+
+

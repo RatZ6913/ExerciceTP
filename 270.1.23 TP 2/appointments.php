@@ -2,11 +2,13 @@
 
 require_once __DIR__ . './core/database/parameters/parameters.php';
 
-// Je récupère le numéro de l'id, envoyé par le <a> : list-patients.php
+// Je récupère l'id correspondant'
+if (!empty($_SERVER["QUERY_STRING"])) {
+  $getId = $_SERVER["QUERY_STRING"];
+}
 
+$getInfosAppointments->fetch();
 
-$getListAppointments->execute();
-$showAllAppointments = $getListAppointments->fetchAll();
 
 ?>
 
@@ -21,14 +23,13 @@ $showAllAppointments = $getListAppointments->fetchAll();
   <section id="listPatients">
     <h1>Listes des rendez-vous</h1>
     <?php
-    foreach ($showAllAppointments as $key) {
+    foreach ($getInfosAppointments as $key) {
     ?>
       <div class="listOfpatients">
         <p><?= $key['dateHour']; ?></p>
         <p><?= $key['firstName']; ?></p>
         <p><?= $key['lastName']; ?></p>
-        <a href="./appointments.php?<?= substr(md5($key['id']), 0, 6); ?>">Plus de détails</a>
-        <a href="">Supprimer ce rendez-vous</a>
+        <a href="">Modifier ce rendez-vous</a>
       </div>
     <?php
     }
@@ -39,3 +40,5 @@ $showAllAppointments = $getListAppointments->fetchAll();
   <?php require_once __DIR__ . './public/common/footer.php'; ?>
 
 </body>
+
+

@@ -27,13 +27,16 @@ $profilOfThisPatient = $pdo->prepare("SELECT id, lastName, firstName, birthdate,
 $profilOfThisPatient->bindParam('id', $patientId);
 // J'ÉXÉCUTE DANS PROFIL-PATIENTS.PHP
 
+
+
 // Voir les rendez-vous de ce patient sélectionner : profil-patients.php
 $dateOfThisPatient = $pdo->prepare("SELECT dateHour FROM appointments WHERE idPatients = :id;");
 $dateOfThisPatient->bindParam('id', $patientId);
 // J'ÉXÉCUTE DANS PROFIL-PATIENTS.PHP
 
 
-// AJOUTER UN RENDEZ-VOUS POUR UN PATIENT
+
+// AJOUTER UN RENDEZ-VOUS POUR UN PATIENT (2 Requêtes)
 // JE COMMMENCE À RÉCUPÉRER L'ID DU PATIENT 
 $getIdOfPatient = $pdo->prepare("SELECT id FROM patients WHERE  lastName = :lastName AND firstName = :firstName AND mail = :email");
 
@@ -54,6 +57,15 @@ $insertPatientDate->bindParam('email', $email);
 // J'ÉXÉCUTE LES DEUX REQÛETES DANS ADDDATEDB.PHP, SI TOUT LE FORMULAIRE EST BON
 
 
+
+
+// AFFICHER TOUS LES RDV AVEC LE PATIENT CORRESPONDANT DANS : list-appointments.php
+$getListAppointments = $pdo->prepare("SELECT t1.dateHour, t2.id, t2.firstName, t2.lastName FROM appointments t1 INNER JOIN patients t2 ON t1.idPatients = t2.id");
+// J'ÉXÉCUTE DANS LIST-APPOINTMENTS.PHP
+
+// AFFICHER TOUS LES RDV AVEC LE PATIENT CORRESPONDANT DANS : list-appointments.php
+$getInfosAppointments = $pdo->prepare("SELECT t1.dateHour, t2.* FROM appointments t1 INNER JOIN patients t2 ON t1.idPatients = t2.id");
+// J'ÉXÉCUTE DANS LIST-APPOINTMENTS.PHP
 
 
 

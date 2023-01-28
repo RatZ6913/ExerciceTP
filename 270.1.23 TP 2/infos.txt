@@ -20,12 +20,12 @@ Crée PAGES :
 
 
 
-	- liste-rdv.php
-    -> Afficher la liste des rdv. Un lien vers ajout-rdv.php
+	- // liste-appointments.php
+    -> // Afficher la liste des rdv. Un lien vers ajout-rdv.php
     -> Permettre de supprimer d'un rdv
 
-	- rdv.php
-	  ->  Afficher toute infos d'un rdv. Doit être accessible depuis liste-rdv.php et afficher les infos du rdv sélectionner.
+	- appointments.php
+	  ->  Afficher toute infos d'un rdv. Doit être accessible depuis liste-appointments.php et afficher les infos du rdv sélectionner.
     -> Permettre la modification de ce rdv
 
 ________________
