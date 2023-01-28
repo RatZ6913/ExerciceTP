@@ -1,0 +1,43 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.errorsMsg {
+  color: red;
+}
+
+.success {
+  color: green;
+}
+
+/* // list-patients.php */
+#listPatients {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#listPatients h1 {
+  width: 100%;
+  text-align: center;
+}
+
+.listOfpatients {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  width: 25%;
+  margin: 1rem;
+  text-align: center;
+}
+
+
+
+
+footer {
+  width: 100%;
+  background-color: lightblue;
+  text-align: center;
+}
+
