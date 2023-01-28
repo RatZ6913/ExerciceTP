@@ -8,6 +8,11 @@ require_once __DIR__ . './core/database/parameters/parameters.php';
 $getListAppointments->execute();
 $showAllAppointments = $getListAppointments->fetchAll();
 
+
+if($_SERVER['REQUEST_METHOD'] === "POST"){
+  
+}
+
 ?>
 
 <head>
@@ -24,11 +29,13 @@ $showAllAppointments = $getListAppointments->fetchAll();
     foreach ($showAllAppointments as $key) {
     ?>
       <div class="listOfpatients">
-        <p><?= $key['dateHour']; ?></p>
-        <p><?= $key['firstName']; ?></p>
-        <p><?= $key['lastName'];?></p>
+        <p> Date / Heure :<?= $key['dateHour']; ?></p>
+        <p> Nom : <?= $key['firstName']; ?></p>
+        <p> Prénom : <?= $key['lastName']; ?></p>
         <a href="./appointments.php?<?= $key['id']; ?>">Plus de détails</a>
-        <a href="">Supprimer ce rendez-vous</a>
+        <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+          <input type="submit" name="submit" value="Supprimer">
+        </form>
       </div>
     <?php
     }
@@ -39,3 +46,6 @@ $showAllAppointments = $getListAppointments->fetchAll();
   <?php require_once __DIR__ . './public/common/footer.php'; ?>
 
 </body>
+
+
+

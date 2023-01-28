@@ -26,12 +26,14 @@ Crée PAGES :
 
 	- appointments.php
 	  -> // Afficher toute infos d'un rdv. Doit être accessible depuis liste-appointments.php et afficher les infos du rdv sélectionner.
-    -> // Permettre la modification de ce rdv
+    ->  Permettre la modification de ce rdv
 
 ________________
 ________________
 ________________
 ________________
+
+
 
 
 
