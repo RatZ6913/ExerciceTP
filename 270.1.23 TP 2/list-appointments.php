@@ -7,11 +7,8 @@ $getListAppointments->execute();
 $showAllAppointments = $getListAppointments->fetchAll();
 
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
-
-  $appointsmentsId = $_POST['id'];
-  if($appointsmentsId == $key['id_app']){
-    echo $appointsmentsId;
-  }
+  $appointmentsId = $_POST['id'];
+  $deleteAppointments->execute();
 }
 ?>
 
@@ -35,8 +32,9 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         <p> Prénom : <?= $key['lastName']; ?></p>
         <a href="./appointments.php?<?= $key['id']; ?>">Plus de détails</a>
         <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+        <!-- // Ici je mets un input invisible pour pouvoir récupérer le $_POST de l'id  -->
           <input type="hidden" name="id" value="<?= $key['id_app']; ?>">
-          <input type="submit" name="submit" value="Supprimer <?= $appointmentsId ?>">
+          <input type="submit" name="submit" value="Supprimer">
         </form>
       </div>
     <?php
@@ -44,7 +42,6 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
     ?>
   </section>
-
 
   <?php require_once __DIR__ . './public/common/footer.php'; ?>
 
