@@ -19,6 +19,10 @@ if (empty($showThisProfil)) {
   die();
 }
 
+// Liste de tous les rendez-vous de ce patient
+$dateOfThisPatient->execute();
+$showDateOfPatient = $dateOfThisPatient->fetchAll();
+
 ?>
 
 <head>
@@ -40,8 +44,16 @@ if (empty($showThisProfil)) {
       <p>Téléphone : <?= $showThisProfil['phone'] ?? ''; ?></p>
       <p>Mail : <?= $showThisProfil['mail'] ?? ''; ?></p>
     </div>
+
+    <div>
+      <h2>Liste des rendez-vous de Mr.<?= $showThisProfil['lastName'] . " " . $showThisProfil['firstName'] ?></h2>
+      <?php
+      foreach ($showDateOfPatient as $key) {
+      ?>
+        <p><?= $key['dateHour']; ?></p>
+      <?php
+      }
+      ?>
+    </div>
   </section>
 </body>
-
-
-
