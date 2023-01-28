@@ -15,7 +15,7 @@ if (empty($showThisProfil)) {
   // Message pour informer l'user que aucun patient a été sélectionner
   echo "<p style=color:red> Veuillez sélectionner un patient !</p>";
   echo '<a href="./list-patients.php">Retour</a>';
-  // Ou je coupe le script si un petit malin accède directement via l'URL
+  // Et si le patient n'existe pas je coupe le script
   die();
 }
 

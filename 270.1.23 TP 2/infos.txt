@@ -3,19 +3,19 @@ Crée PAGES :
 	- index.php
         */ Lien pour rediriger. Vers : 
                     - //ajout-patients.php || (= Formulaire pour crée un patient et l'ajouter)
-                    - ajout-rdv.php || (= Formulaire pour ajouter un rdv)
+                    - // ajout-rdv.php || (= Formulaire pour ajouter un rdv)
 
 	      */ liste-patients.php 
                     -> // Afficher liste des patients dans la page, et un lien vers ajout-patients.php
                     -> Permettre de supprimer un patient et ses rdv
                     -> Un champ de Recherche
                     -> Créer une pagination
-                            */ ajout-patients.php (Qui est un formulaire)
-                            */ profil-patients.php 
+                            *// ajout-patients.php (Qui est un formulaire)
+                            *// profil-patients.php 
 
 
                     -> // Afficher toutes les informations d'un patient. Et doit être accessible depuis liste-patients.php. Et Afficher infos du patient Sélectionner
-                    ->  Afficher toute ses informations de ses rdv
+                    -> // Afficher toute ses informations de ses rdv
 
 
 
