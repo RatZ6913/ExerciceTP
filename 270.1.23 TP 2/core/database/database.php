@@ -24,12 +24,6 @@ try {
 return $pdo;
 
 
-// J'initialise 
-//  - getenv('DB_NAME') 
-//  - getenv('DB_PWD')
-
-// en déclarant les variables avec le CLI 
-// DB_NAME='NOM_BDD' DB_PWD='PWD_BDD' php -S localhost:3000
 
 
 

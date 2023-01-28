@@ -60,7 +60,7 @@ $insertPatientDate->bindParam('email', $email);
 
 
 // AFFICHER TOUS LES RDV AVEC LE PATIENT CORRESPONDANT DANS : list-appointments.php
-$getListAppointments = $pdo->prepare("SELECT t1.dateHour, t2.id, t2.firstName, t2.lastName FROM appointments t1 INNER JOIN patients t2 ON t1.idPatients = t2.id");
+$getListAppointments = $pdo->prepare("SELECT t1.id AS id_app, t1.dateHour, t2.id, t2.firstName, t2.lastName FROM appointments t1 INNER JOIN patients t2 ON t1.idPatients = t2.id");
 // J'ÉXÉCUTE DANS LIST-APPOINTMENTS.PHP
 
 // AFFICHER TOUS LES RDV AVEC LE PATIENT CORRESPONDANT DANS : list-appointments.php
@@ -68,7 +68,9 @@ $getInfosAppointments = $pdo->prepare("SELECT t1.dateHour, t2.* FROM appointment
 $getInfosAppointments->bindParam('id', $getId);
 // J'ÉXÉCUTE DANS LIST-APPOINTMENTS.PHP
 
-
+// SUPPRIMER UN RENDEZ-VOUS DEPUIS : list-appointments.php 
+$deleteAppointments = $pdo->prepare("DELETE FROM appointments WHERE id = :id");
+$deleteAppointments->bindParam('id', $appointmentsId);
 
 // Les stocker dans une classe plus tard, quand plus de maitrise
 
