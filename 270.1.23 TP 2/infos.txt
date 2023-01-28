@@ -1,13 +1,13 @@
 Crée PAGES : 
 
 - //Fini! index.php
-    */ Lien pour rediriger. Vers : 
+    *//Fini! Lien pour rediriger. Vers : 
             - //Fini! ajout-patients.php || (= Formulaire pour crée un patient et l'ajouter)
             - //Fini! ajout-rdv.php || (= Formulaire pour ajouter un rdv)
 
-    */ liste-patients.php 
-            -> // Afficher liste des patients dans la page, et un lien vers ajout-patients.php
-            -> Permettre de supprimer un patient et ses rdv
+    *//Fini! liste-patients.php 
+            -> //Fini! Afficher liste des patients dans la page, et un lien vers ajout-patients.php
+            -> //Fini! Permettre de supprimer un patient et ses rdv
             -> Un champ de Recherche
             -> Créer une pagination
                     *//Fini! ajout-patients.php (Qui est un formulaire)
