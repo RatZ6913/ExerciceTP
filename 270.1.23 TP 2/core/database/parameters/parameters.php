@@ -19,9 +19,12 @@ $insertNewPatient->bindParam('email', $email);
 
 // _____________________ PARTIE : list-patients.php  __________________________ //
 // voir la liste de tous les patients  : list-patients.php
-$listOfPatients = $pdo->prepare("SELECT * FROM patients LIMIT :limit");
+$listOfPatients = $pdo->prepare("SELECT * FROM patients LIMIT :start, :limit");
+$listOfPatients->bindParam(':start', $start, PDO::PARAM_INT);
 $listOfPatients->bindParam(':limit', $limit, PDO::PARAM_INT);
 // j'éxécute dans list-patients.php
+
+$patientsPerPages = $pdo->prepare("SELECT COUNT(*) FROM patients");
 
 // Rechercher un patient : list-pastient.php
 $searchPatient = $pdo->prepare("SELECT id, lastname, firstname FROM patients WHERE lastname = :lastName OR firstname = :firstName");

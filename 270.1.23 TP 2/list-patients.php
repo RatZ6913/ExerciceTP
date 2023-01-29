@@ -2,7 +2,19 @@
 
 require_once __DIR__ . './core/database/parameters/parameters.php';
 
-$limit = 10;
+$limit = 5;
+
+if (isset($_GET['page'])) {
+  $page = $_GET['page'];
+} else {
+  $page = 1;
+}
+$start = ($page - 1) * $limit;
+
+$patientsPerPages->execute();
+$total = $patientsPerPages->fetchColumn();
+$pages = ceil($total / $limit);
+
 $listOfPatients->execute();
 $showAllPatients = $listOfPatients->fetchAll();
 
@@ -27,7 +39,6 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
   }
 }
 
-
 ?>
 
 <head>
@@ -48,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     <?php
     $count = 0;
     foreach ($validPatient as $patients) {
-      $count+= 1;
+      $count += 1;
     ?>
       <p>Résultat trouvé <?= $count; ?> : </p>
       <div class="listOfpatients">
@@ -79,7 +90,13 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     }
     ?>
   </section>
-  <a href="" class="pages"><?= $page; ?></a>
+  <div id="pages">
+    <?php
+    for ($i = 1; $i <= $pages; $i++) {
+      echo '<a href="?page=' . $i . '">' . $i . '</a> ';
+    }
+    ?>
+  </div>
   <?php require_once __DIR__ . './public/common/footer.php'; ?>
 
 </body>
