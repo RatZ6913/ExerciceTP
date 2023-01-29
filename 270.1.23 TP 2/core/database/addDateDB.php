@@ -70,6 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
       // avec la deuxième requête
       if($id !== ''){
         $insertPatientDate->execute();
+        $lastName = $firstName = $email = $date = $hour = ""; // J'efface les VALUE, si succès
         return $dateAdded = "Ce rendez-vous a bien été ajouté.";
       } else {
         return $patientNotExist = "Ce patient n'existe pas !";

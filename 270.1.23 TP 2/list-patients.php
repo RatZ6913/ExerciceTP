@@ -2,6 +2,7 @@
 
 require_once __DIR__ . './core/database/parameters/parameters.php';
 
+$limit = 10;
 $listOfPatients->execute();
 $showAllPatients = $listOfPatients->fetchAll();
 
@@ -61,6 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
     <h1>Liste des patients</h1>
     <?php
+    $page = 0;
     foreach ($showAllPatients as $key) {
     ?>
       <div class="listOfpatients">
@@ -77,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     }
     ?>
   </section>
-
+  <a href="" class="pages"><?= $page; ?></a>
   <?php require_once __DIR__ . './public/common/footer.php'; ?>
 
 </body>

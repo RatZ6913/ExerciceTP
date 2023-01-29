@@ -34,6 +34,11 @@
   text-align: center;
 }
 
+.pages {
+  display: flex;
+  justify-content: center;
+}
+
 footer {
   width: 100%;
   background-color: lightblue;

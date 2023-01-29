@@ -19,7 +19,8 @@ $insertNewPatient->bindParam('email', $email);
 
 // _____________________ PARTIE : list-patients.php  __________________________ //
 // voir la liste de tous les patients  : list-patients.php
-$listOfPatients = $pdo->prepare("SELECT * FROM patients");
+$listOfPatients = $pdo->prepare("SELECT * FROM patients LIMIT :limit");
+$listOfPatients->bindParam(':limit', $limit, PDO::PARAM_INT);
 // j'éxécute dans list-patients.php
 
 // Rechercher un patient : list-pastient.php
@@ -74,25 +75,29 @@ $insertPatientDate->bindParam('email', $email);
 // _____________________ PARTIE : list-appointments.php  __________________________ //
 // afficher tous les rdv avec le patient correspondant dans : list-appointments.php
 $getListAppointments = $pdo->prepare("SELECT t1.id AS id_app, t1.dateHour, t2.id, t2.firstName, t2.lastName FROM appointments t1 INNER JOIN patients t2 ON t1.idPatients = t2.id");
-// J'ÉXÉCUTE DANS LIST-APPOINTMENTS.PHP
+// j'éxécute dans list-appointments.php
 
 // afficher tous les rdv avec le patient correspondant dans : list-appointments.php
 $getInfosAppointments = $pdo->prepare("SELECT t1.dateHour, t2.* FROM appointments t1 INNER JOIN patients t2 ON t1.idPatients = t2.id AND t2.id = :id");
 $getInfosAppointments->bindParam('id', $getId);
 // j'éxécute dans list-appointments.php
 
-// SUPPRIMER UN RENDEZ-VOUS DEPUIS : list-appointments.php 
+// supprimer un rendez-vous depuis : list-appointments.php 
 $deleteAppointments = $pdo->prepare("DELETE FROM appointments WHERE id = :id");
 $deleteAppointments->bindParam('id', $appointmentsId);
 // j'éxécute dans list-appointments.php
 
+// Requête pour récupérer infos du rendez-vous
+$getInfosOfAppointment = $pdo->prepare("SELECT t1.lastname, t1.firstname, t1.mail, t2.id, DATE(t2.dateHour) AS date, TIME(t2.dateHour) AS hour FROM patients t1 INNER JOIN appointments t2 ON t1.id = t2.idPatients AND t2.idPatients = :idPatientApp");
+$getInfosOfAppointment->bindParam('idPatientApp', $idPatientApp);
+// J'éxécute dans edit-date.php
 
-
-
-
-
-
-
+// Update des modifications du rendez-vous
+$applyUpdateAppointment = $pdo->prepare("UPDATE appointments SET dateHour = CONCAT(:date,' ', :hour) WHERE id = :idApp");
+$applyUpdateAppointment->bindParam('date', $dateUpdate);
+$applyUpdateAppointment->bindParam('hour', $hourUpdate);
+$applyUpdateAppointment->bindParam('idApp', $idAppUpdate);
+// J'éxecute dans : edit-date.php 
 
 
 

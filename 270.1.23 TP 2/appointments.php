@@ -10,7 +10,6 @@ if (!empty($_SERVER["QUERY_STRING"])) {
 $getInfosAppointments->execute();
 $showInfosAppointments = $getInfosAppointments->fetch();
 
-
 if (empty($showInfosAppointments)) {
   // Message pour informer l'user que aucun patient a été sélectionner
   echo "<p style=color:red> Veuillez sélectionner un patient !</p>";
@@ -32,19 +31,19 @@ if (empty($showInfosAppointments)) {
   <section class="listPatients">
     <h1>Informations du rendez-vous</h1>
     <div class="listOfpatients">
-      <p>Nom : <?= $showInfosAppointments['firstname']; ?> </p>
-      <p>Prénom : <?= $showInfosAppointments['lastname']; ?></p>
+      <p>Nom : <?= $showInfosAppointments['lastname']; ?> </p>
+      <p>Prénom : <?= $showInfosAppointments['firstname']; ?></p>
       <p>Date/Heure du rendez-vous : <?= $showInfosAppointments['dateHour']; ?></p>
       <p>Date de naissance : <?= $showInfosAppointments['birthdate']; ?></p>
       <p>Téléphone : <?= $showInfosAppointments['phone']; ?></p>
       <p>Email : <?= $showInfosAppointments['mail']; ?></p>
 
       <form action="./edit-date.php" method="POST">
+        <input type="hidden" name="id" value="<?= $getId; ?>">
         <input type="submit" value="Modifier">
       </form>
     </div>
   </section>
-
 
   <?php require_once __DIR__ . './public/common/footer.php'; ?>
 
