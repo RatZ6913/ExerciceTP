@@ -23,7 +23,7 @@ $listOfPatients = $pdo->prepare("SELECT * FROM patients");
 // j'éxécute dans list-patients.php
 
 // Rechercher un patient : list-pastient.php
-$searchPatient = $pdo->prepare("SELECT lastname, firstname FROM patients WHERE lastname = :lastName OR firstname = :firstName");
+$searchPatient = $pdo->prepare("SELECT id ,lastname, firstname FROM patients WHERE lastname = :lastName OR firstname = :firstName");
 $searchPatient->bindParam('lastName', $searchLastname);
 $searchPatient->bindParam('firstName', $searchFirstName);
 // J'éxécute dans list-patients.php

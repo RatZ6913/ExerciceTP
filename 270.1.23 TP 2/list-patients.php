@@ -5,8 +5,8 @@ require_once __DIR__ . './core/database/parameters/parameters.php';
 $listOfPatients->execute();
 $showAllPatients = $listOfPatients->fetchAll();
 
-
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
+
   $delPatientId = $_POST['delPatientId'] ?? '';
   if (!empty($delPatientId)) {
     $deleteThisPatients->execute();
@@ -16,18 +16,14 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
   }
 
   if (!empty($_POST['search'])) {
-    foreach ($showAllPatients as $key) {
-      $searchLastname = $key['firstname'];
-      $searchFirstName = $key['lastname'];
-    }
-    
+    $searchLastname = $_POST['searchPatient'];
+    $searchFirstName = $_POST['searchPatient'];
+
     $searchPatient->execute();
-    $test = $searchPatient->fetchAll();
-    foreach ($test as $key) {
-      var_dump($test);
-    }
+    $validPatient = $searchPatient->fetchAll();
   }
 }
+
 
 ?>
 
@@ -42,17 +38,33 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
   <section class="listPatients">
     <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
-      <input type="search" name="search" placeholder="Rechercher..." value="">
+      <input type="search" name="searchPatient" placeholder="Rechercher...">
       <input type="submit" name="search" value="Valider">
     </form>
+
+    <?php
+    $validPatient = $validPatient ?? '';
+    $count = 0;
+    foreach ($validPatient as $patients) {
+      $count+= 1;
+    ?>
+      <p>Résultat trouvé <?= $count; ?> : </p>
+      <div class="listOfpatients">
+        <p> Nom :<?= $patients['lastname']; ?></p>
+        <p> Prénom :<?= $patients['firstname']; ?></p>
+        <a href="./profil-patients.php?<?= $patients['id']; ?>">Infos de <?= $patients['firstname']; ?></a>
+      </div>
+    <?php
+    }
+    ?>
 
     <h1>Liste des patients</h1>
     <?php
     foreach ($showAllPatients as $key) {
     ?>
       <div class="listOfpatients">
-        <p> Nom : <?= $key['firstname']; ?></p>
-        <p> Prénom : <?= $key['lastname']; ?></p>
+        <p> Prénom : <?= $key['firstname']; ?></p>
+        <p> Nom : <?= $key['lastname']; ?></p>
         <!-- // J'envoie l'id du patient pour le récupérer dans : profil-patients.php. Et pouvoir le comparer -->
         <a href="./profil-patients.php?<?= $key['id']; ?>">Infos de <?= $key['firstname']; ?></a>
         <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
