@@ -15,14 +15,16 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     die();
   }
 
-  if (!empty($_POST)) {
+  if (!empty($_POST['search'])) {
     foreach ($showAllPatients as $key) {
       $searchLastname = $key['firstname'];
       $searchFirstName = $key['lastname'];
-
-      if ($searchLastname == $_POST['search'] || $searchFirstName == $_POST['search']) {
-        echo $searchFirstName, $searchLastname;
-      }
+    }
+    
+    $searchPatient->execute();
+    $test = $searchPatient->fetchAll();
+    foreach ($test as $key) {
+      var_dump($test);
     }
   }
 }

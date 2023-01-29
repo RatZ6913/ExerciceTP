@@ -2,15 +2,14 @@
 
 require_once __DIR__ . './core/database/parameters/parameters.php';
 
-// Liste de tous les rendez-vous de ce patient
-$dateOfThisPatient->execute();
-$showDateOfPatient = $dateOfThisPatient->fetchAll();
-
-
 // Je récupère le numéro de l'id, envoyé par le <a> : list-patients.php
 if (!empty($_SERVER["QUERY_STRING"])) {
   $patientId = $_SERVER["QUERY_STRING"];
 }
+
+// Liste de tous les rendez-vous de ce patient
+$dateOfThisPatient->execute();
+$showDateOfPatient = $dateOfThisPatient->fetchAll();
 
 $profilOfThisPatient->execute(); // Puis je le compare avec les infos de l'user si c'est =id . parameters.php
 $showThisProfil = $profilOfThisPatient->fetch();
