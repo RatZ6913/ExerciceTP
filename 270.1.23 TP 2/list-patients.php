@@ -5,6 +5,8 @@ require_once __DIR__ . './core/database/parameters/parameters.php';
 $listOfPatients->execute();
 $showAllPatients = $listOfPatients->fetchAll();
 
+$validPatient = $searchPatient->fetchAll() ?? '';
+
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
   $delPatientId = $_POST['delPatientId'] ?? '';
@@ -43,7 +45,6 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     </form>
 
     <?php
-    $validPatient = $validPatient ?? '';
     $count = 0;
     foreach ($validPatient as $patients) {
       $count+= 1;
