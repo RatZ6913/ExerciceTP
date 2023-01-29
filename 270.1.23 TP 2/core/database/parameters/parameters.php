@@ -23,7 +23,7 @@ $listOfPatients = $pdo->prepare("SELECT * FROM patients");
 // j'éxécute dans list-patients.php
 
 // Rechercher un patient : list-pastient.php
-$searchPatient = $pdo->prepare("SELECT id ,lastname, firstname FROM patients WHERE lastname = :lastName OR firstname = :firstName");
+$searchPatient = $pdo->prepare("SELECT idlastname, firstname FROM patients WHERE lastname = :lastName OR firstname = :firstName");
 $searchPatient->bindParam('lastName', $searchLastname);
 $searchPatient->bindParam('firstName', $searchFirstName);
 // J'éxécute dans list-patients.php
@@ -51,7 +51,7 @@ $dateOfThisPatient->bindParam('id', $patientId);
 // _____________________ PARTIE : addDateDB.php  __________________________ //
 // AJOUTER UN RENDEZ-VOUS POUR UN PATIENT (2 Requêtes) : addDateDB.php
 // je commmence à récupérer l'id du patient : addDateDB.php
-$getIdOfPatient = $pdo->prepare("SELECT id FROM patients WHERE  lastName = :lastName AND firstName = :firstName AND mail = :email");
+$getIdOfPatient = $pdo->prepare("SELECT id FROM patients WHERE  lastname = :lastName AND firstname = :firstName AND mail = :email");
 
 $getIdOfPatient->bindParam('lastName', $lastName);
 $getIdOfPatient->bindParam('firstName', $firstName);
@@ -59,7 +59,7 @@ $getIdOfPatient->bindParam('email', $email);
 
 // pour ensuite comparé les informations si elles correspondent
 $insertPatientDate = $pdo->prepare("INSERT INTO appointments (dateHour, idPatients)
-SELECT CONCAT(:date, ' ', :hour), :id FROM patients WHERE id = :id AND lastName = :lastName AND firstName = :firstName AND mail = :email");
+SELECT CONCAT(:date, ' ', :hour), id FROM patients WHERE id = :id AND lastName = :lastName AND firstName = :firstName AND mail = :email");
 
 $insertPatientDate->bindParam('id', $id);
 $insertPatientDate->bindParam('date', $date);

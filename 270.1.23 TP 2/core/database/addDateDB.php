@@ -6,6 +6,7 @@ const EMPTY_INPUT = "Champ vide...";
 const ERROR_LENGHT = "Pas assez de caractères...";
 const INVALID_INPUT = "Champ invalide...";
 
+
 // Je déclare les valeurs associatives en valeurs vide, pour éviter des erreurs
 $errors = [
   'lastName' => '',
@@ -63,12 +64,17 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
       // Je fais une requête pour récupérer l'id du patient
       $getIdOfPatient->execute();
       $showId = $getIdOfPatient->fetch();
+      $id = $showId['id'] ?? '';
 
       // Pour ensuite l'enregistrer dans une variable et la comparer (parameters.php)
       // avec la deuxième requête
-      $id = $showId['id'];
-      $insertPatientDate->execute();
-      return $dateAdded = "Ce rendez-vous a bien été ajouté.";
+      if($id !== ''){
+        $insertPatientDate->execute();
+        return $dateAdded = "Ce rendez-vous a bien été ajouté.";
+      } else {
+        return $patientNotExist = "Ce patient n'existe pas !";
+      }
+
     } catch (Exception $th) {
       echo "Erreur : " . $th->getMessage();
     }

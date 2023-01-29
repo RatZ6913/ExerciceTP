@@ -39,7 +39,7 @@ if (empty($showInfosAppointments)) {
       <p>Téléphone : <?= $showInfosAppointments['phone']; ?></p>
       <p>Email : <?= $showInfosAppointments['mail']; ?></p>
 
-      <form action="">
+      <form action="./edit-date.php" method="POST">
         <input type="submit" value="Modifier">
       </form>
     </div>
