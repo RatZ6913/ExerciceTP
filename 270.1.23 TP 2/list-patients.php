@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
   <?php require_once __DIR__ . './public/common/header.php'; ?>
   <a href="./add-patients.php">Ajouter un patient</a>
 
-  <section class="listPatients">
+  <section id="box-listPatients">
     <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
       <input type="search" name="searchPatient" placeholder="Rechercher...">
       <input type="submit" name="search" value="Valider">

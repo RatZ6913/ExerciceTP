@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 <body>
   <?php require_once __DIR__ . './public/common/header.php'; ?>
   <a href="./add-date.php">Ajouter un rendez-vous</a>
-  <section id="listPatients">
+  <section id="box-listPatients">
     <h1>Listes des rendez-vous</h1>
     <?php
     foreach ($showAllAppointments as $key) {

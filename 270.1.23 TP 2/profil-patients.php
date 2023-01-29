@@ -33,8 +33,8 @@ if (empty($showThisProfil)) {
 <body>
   <?php require_once __DIR__ . './public/common/header.php'; ?>
   <a href="./add-patients.php">Ajouter un patient</a>
-  <section id="listPatients">
-    <div class="listOfpatients">
+  <section id="box-listAppments">
+    <div class="content">
       <h1>Les infos du patient</h1>
       <!-- Si les variables sont NULL alors je les remplaces par des valeurs vides pour éviter des erreurs -->
       <p>Nom : <?= $showThisProfil['lastName'] ?? '' ?> </p>
