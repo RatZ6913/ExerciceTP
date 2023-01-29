@@ -19,8 +19,14 @@ $insertNewPatient->bindParam('email', $email);
 
 // _____________________ PARTIE : list-patients.php  __________________________ //
 // voir la liste de tous les patients  : list-patients.php
-$listOfPatients = $pdo->prepare("SELECT id, lastName, firstName, birthdate, phone, mail FROM patients");
+$listOfPatients = $pdo->prepare("SELECT * FROM patients");
 // j'éxécute dans list-patients.php
+
+// Rechercher un patient : list-pastient.php
+$searchPatient = $pdo->prepare("SELECT lastname, firstname FROM patients WHERE lastname = :lastName OR firstname = :firstName");
+$searchPatient->bindParam('lastName', $searchLastname);
+$searchPatient->bindParam('firstName', $searchFirstName);
+// J'éxécute dans list-patients.php
 
 // supprimer un patient : list-patients.php
 $deleteThisPatients = $pdo->prepare("DELETE FROM patients WHERE id = :delPatientId");
