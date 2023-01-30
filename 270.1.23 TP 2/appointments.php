@@ -31,12 +31,12 @@ if (empty($showInfosAppointments)) {
   <section class="container">
     <h1>Informations du rendez-vous</h1>
     <div class="listOfpatients">
-      <p>Nom : <?= $showInfosAppointments['lastname']; ?> </p>
-      <p>Prénom : <?= $showInfosAppointments['firstname']; ?></p>
-      <p>Date/Heure du rendez-vous : <?= $showInfosAppointments['dateHour']; ?></p>
-      <p>Date de naissance : <?= $showInfosAppointments['birthdate']; ?></p>
-      <p>Téléphone : <?= $showInfosAppointments['phone']; ?></p>
-      <p>Email : <?= $showInfosAppointments['mail']; ?></p>
+      <p>Nom : <span class="infosBDD"><?= $showInfosAppointments['lastname']; ?></span></p>
+      <p>Prénom : <span class="infosBDD"><?= $showInfosAppointments['firstname']; ?></span></p>
+      <p>Date/Heure du rendez-vous : <span class="infosBDD"><?= $showInfosAppointments['dateHour']; ?></span></p>
+      <p>Date de naissance : <span class="infosBDD"><?= $showInfosAppointments['birthdate']; ?></span></p>
+      <p>Téléphone : <span class="infosBDD"><?= $showInfosAppointments['phone']; ?></span></p>
+      <p>Email : <span class="infosBDD"><?= $showInfosAppointments['mail']; ?></span></p>
 
       <form action="./edit-date.php" method="POST">
         <input type="hidden" name="id" value="<?= $getId; ?>">

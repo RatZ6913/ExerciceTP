@@ -64,8 +64,8 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
       <section id="patientSearch">
         <div class="patientsSearch">
           <p>Résultat trouvé <?= $count; ?> : </p>
-          <p> Nom :<?= $patients['lastname']; ?></p>
-          <p> Prénom :<?= $patients['firstname']; ?></p>
+          <p> Nom : <span class="success"> <?= $patients['lastname']; ?></span></p>
+          <p> Prénom : <span class="success"><?= $patients['firstname']; ?></span></p>
           <a href="./profil-patients.php?<?= $patients['id']; ?>">Infos de <?= $patients['firstname']; ?></a>
         </div>
       </section>
