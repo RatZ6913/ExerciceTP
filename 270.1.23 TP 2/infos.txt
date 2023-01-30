@@ -9,7 +9,7 @@ Crée PAGES :
             -> //Fini! Afficher liste des patients dans la page, et un lien vers ajout-patients.php
             -> //Fini! Permettre de supprimer un patient et ses rdv
             -> //Fini! Un champ de Recherche
-            -> Créer une pagination
+            -> //Fini! Créer une pagination
                     *//Fini! ajout-patients.php (Qui est un formulaire)
                     *//Fini! profil-patients.php 
 
