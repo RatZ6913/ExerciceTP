@@ -52,7 +52,7 @@ if (isset($_POST['editDate'])) {
       <div class="content editDate">
         <label for="date">Date : </label>
         <input type="date" name="date" id="date" value="<?= $date ?? ''; ?>">
-        <p class=" errorsMsg"><?= $errors['date'] ?? ''; ?></p>
+        <p class="errorsMsg"><?= $errors['date'] ?? ''; ?></p>
       </div>
       <div class="content editDate">
         <label for="hour">Heure : </label>
