@@ -18,6 +18,13 @@ require_once __DIR__ . './core/database/database.php';
     <a href="./add-date.php">Ajouter un rendez-vous</a>
   </section>
 
+  <section id="mainPage">
+    <span id="looneyTunes"></span>
+    <h2>Euh, quoi de neuf, docteur ?</h2>
+    <div id="bugs-Bunny">
+    </div>
+  </section>
+
   <?php require_once __DIR__ . './public/common/footer.php'; ?>
 </body>
 

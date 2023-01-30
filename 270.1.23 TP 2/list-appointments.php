@@ -27,9 +27,9 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
       $appointmentsId = $key['id_app'];
     ?>
       <div class="listOfpatients">
-        <p> Date / Heure :<?= $key['dateHour']; ?></p>
-        <p> Nom : <?= $key['firstName']; ?></p>
-        <p> Prénom : <?= $key['lastName']; ?></p>
+        <p> Date / Heure : <span class='infosBDD'><?= $key['dateHour']; ?></span></p>
+        <p> Nom : <span class='infosBDD'><?= $key['firstName']; ?></span></p>
+        <p> Prénom : <span class='infosBDD'><?= $key['lastName']; ?></span></p>
         <a href="./appointments.php?<?= $key['id']; ?>">Plus de détails</a>
         <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
         <!-- // Ici je mets un input invisible pour pouvoir récupérer le $_POST de l'id  -->

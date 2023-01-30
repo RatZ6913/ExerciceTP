@@ -22,7 +22,7 @@ if (isset($_POST['editDate'])) {
 
   $applyUpdateAppointment->execute();
 
-  if( $applyUpdateAppointment->execute() == true){
+  if ($applyUpdateAppointment->execute() == true) {
     echo "<p style='color:green'>Rendez-vous a bien été modifié !</p>";
     echo "<a href='./list-appointments.php'> Liste des rendez-vous </a>";
     die();
@@ -39,28 +39,30 @@ if (isset($_POST['editDate'])) {
 <body>
   <?php require_once __DIR__ . './public/common/header.php'; ?>
 
-  <section class="listPatients">
+  <section id="box-editDate">
     <h1>Modifer un rendez-vous</h1>
 
-    <div class="listOfpatients">
-      <p>Nom :<?= $lastName; ?></p>
-      <p>Prénom :<?= $firstName; ?></p>
-      <p>Email :<?= $email; ?></p>
+    <div class="content">
+      <p>Nom : <span class="infosBdd"><?= $lastName; ?></span></p>
+      <p>Prénom : <span class="infosBdd"><?= $firstName; ?></span></p>
+      <p>Email : <span class="infosBdd"><?= $email; ?></span></p>
     </div>
 
     <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
-      <div>
+      <div class="content editDate">
         <label for="date">Date : </label>
         <input type="date" name="date" id="date" value="<?= $date ?? ''; ?>">
         <p class=" errorsMsg"><?= $errors['date'] ?? ''; ?></p>
       </div>
-      <div>
+      <div class="content editDate">
         <label for="hour">Heure : </label>
         <input type="time" name="hour" id="hour" value="<?= $hour ?? ''; ?>">
         <p class="errorsMsg"><?= $errors['hour'] ?? ''; ?></p>
       </div>
-      <input type="hidden" name="idAppUpdate" value="<?= $idAppUpdate; ?>">
-      <input type="submit" value="Valider" name="editDate">
+      <div class="content">
+        <input type="hidden" name="idAppUpdate" value="<?= $idAppUpdate; ?>">
+        <input type="submit" value="Valider" name="editDate">
+      </div>
     </form>
   </section>
 
