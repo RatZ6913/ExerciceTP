@@ -20,17 +20,17 @@ require_once __DIR__ . './core/database/parameters/parameters.php';
       <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
         <div>
           <label for="lastName">Nom : </label>
-          <input type="text" name="lastName" id="lastName" value="<?= $lastName; ?>">
+          <input type="text" name="lastName" id="lastName" value="<?= $lastName; ?>" placeholder="Nom...">
           <p class="errorsMsg"><?= $errors['lastName']; ?></p>
         </div>
         <div>
           <label for="firstName">Prénom : </label>
-          <input type="text" name="firstName" id="firstName" value="<?= $firstName; ?>">
+          <input type="text" name="firstName" id="firstName" value="<?= $firstName; ?>" placeholder="Prénom...">
           <p class="errorsMsg"><?= $errors['firstName']; ?></p>
         </div>
         <div>
           <label for="email">Email : </label>
-          <input type="text" name="email" id="email" value="<?= $email; ?>">
+          <input type="text" name="email" id="email" value="<?= $email; ?>" placeholder="Email...">
           <p class="errorsMsg"><?= $errors['email']; ?></p>
         </div>
         <div>

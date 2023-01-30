@@ -28,7 +28,7 @@ if (empty($showInfosAppointments)) {
 <body>
   <?php require_once __DIR__ . './public/common/header.php'; ?>
   <a href="./add-date.php">Ajouter un rendez-vous</a>
-  <section class="listPatients">
+  <section class="container">
     <h1>Informations du rendez-vous</h1>
     <div class="listOfpatients">
       <p>Nom : <?= $showInfosAppointments['lastname']; ?> </p>

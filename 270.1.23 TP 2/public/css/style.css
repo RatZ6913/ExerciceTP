@@ -3,7 +3,6 @@ body {
   margin: 0;
   background-image: url("../images/bg-image.jpg");
   background-size: cover;
-
 }
 
 /* Barre de Navigation  */
@@ -50,6 +49,7 @@ body a, input {
   box-shadow: 1px 2px 2px 1px #5e5c5c;
   width: 150px;
   text-align: center;
+  color: blue;
 }
 
 body a:hover , input:hover{
@@ -62,14 +62,51 @@ h1 {
   width: 100%;
   text-align: center;
   background-color: white;
-  color: #252525;
+  color: #0e3669;
 }
 
 .container {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  height: 80vh;
+  align-items: center;
+}
+
+#mainPage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 50%;
+  margin: auto;
+}
+
+#mainPage h2 {
+  background-color: white;
+  color: #966917;
+  padding: 0.5rem;
+}
+
+#bugs-Bunny {
+  background-image: url('../images/bugs-bunny.webp');
+  background-size: contain;
+  width: 100%;
+  height: 50vh;
+}
+
+#looneyTunes {
+  position: absolute;
+  bottom: 450px;
+  background-image: url("../images/looneyTunes.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 100px;
+  animation: image 5s infinite;
+}
+
+@keyframes image {
+  0% { transform: rotate(0deg) translate(-50%, -50%); }
+  100% { transform: rotate(360deg) translate(-50%); }
 }
 
 #box-listPatients {
@@ -77,7 +114,6 @@ h1 {
   justify-content: space-evenly;
   flex-wrap: wrap;
   margin: 1rem;
-  /* align-items: center; */
 }
 
 .listOfpatients, .content {
@@ -94,7 +130,13 @@ h1 {
   margin: auto;
 }
 
-#box-appments, #box-listAppments, #box-addPatients {
+.editDate {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+#box-appments, #box-listAppments, #box-addPatients, #box-editDate {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -107,6 +149,10 @@ h1 {
 .appointments {
   display: flex;
   width: 20%;
+}
+
+.infosBDD {
+  color: brown;
 }
 
 /* // Messages d'erreurs */

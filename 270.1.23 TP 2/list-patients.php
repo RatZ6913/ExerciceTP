@@ -77,8 +77,8 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     foreach ($showAllPatients as $key) {
     ?>
       <div class="listOfpatients">
-        <p> Prénom : <?= $key['firstname']; ?></p>
-        <p> Nom : <?= $key['lastname']; ?></p>
+        <p> Prénom : <span class="infosBDD"><?= $key['firstname']; ?></span></p>
+        <p> Nom : <span class="infosBDD"><?= $key['lastname']; ?></span></p>
         <!-- // J'envoie l'id du patient pour le récupérer dans : profil-patients.php. Et pouvoir le comparer -->
         <a href="./profil-patients.php?<?= $key['id']; ?>">Infos de <?= $key['firstname']; ?></a>
         <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
