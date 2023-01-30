@@ -44,8 +44,8 @@ if (empty($showThisProfil)) {
       <p>Mail : <?= $showThisProfil['mail'] ?? ''; ?></p>
     </div>
 
-    <div>
-      <h2>Liste des rendez-vous de Mr.<?= $showThisProfil['lastName'] . " " . $showThisProfil['firstName'] ?></h2>
+    <div id="profilPatient">
+      <h2>Liste des rendez-vous de Mr/Mme. <?= $showThisProfil['lastName'] . " " . $showThisProfil['firstName'] ?></h2>
       <?php
       foreach ($showDateOfPatient as $key) {
       ?>

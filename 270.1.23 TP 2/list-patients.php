@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
   <a href="./add-patients.php">Ajouter un patient</a>
 
   <section id="box-listPatients">
-    <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+    <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" id="search">
       <input type="search" name="searchPatient" placeholder="Rechercher...">
       <input type="submit" name="search" value="Valider">
     </form>
@@ -61,16 +61,17 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     foreach ($validPatient as $patients) {
       $count += 1;
     ?>
-      <p>Résultat trouvé <?= $count; ?> : </p>
-      <div class="listOfpatients">
-        <p> Nom :<?= $patients['lastname']; ?></p>
-        <p> Prénom :<?= $patients['firstname']; ?></p>
-        <a href="./profil-patients.php?<?= $patients['id']; ?>">Infos de <?= $patients['firstname']; ?></a>
-      </div>
+      <section id="patientSearch">
+        <div class="patientsSearch">
+          <p>Résultat trouvé <?= $count; ?> : </p>
+          <p> Nom :<?= $patients['lastname']; ?></p>
+          <p> Prénom :<?= $patients['firstname']; ?></p>
+          <a href="./profil-patients.php?<?= $patients['id']; ?>">Infos de <?= $patients['firstname']; ?></a>
+        </div>
+      </section>
     <?php
     }
     ?>
-
     <h1>Liste des patients</h1>
     <?php
     $page = 0;

@@ -64,19 +64,15 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     return $e !== '';
   }))) {
 
-    $lastName = ""; // Reset des champs, quand patient a bien été ajouté
-    $firstName = "";
-    $phone = "";
-    $email = "";
+    if ($insertNewPatient->execute() == true) {
+      $insertNewPatient->execute();
+      $lastName = $firstName = $phone = $email = '';
 
-    $insertNewPatient->execute();
-    return $patientAdded = "Ce patient a bien été ajouté";
-    header('location: ./add-patients.php');
+      return $patientAdded = "Ce patient a bien été ajouté";
+      header('location: ./add-patients.php');
+    } else {
+      echo "<a href='./list-patients.php'> Liste des patients </a>";
+      die();
+    }
   }
 }
-
-
-
-
-
-

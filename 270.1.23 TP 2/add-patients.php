@@ -34,7 +34,7 @@ require_once __DIR__ . './core/database/parameters/parameters.php';
         </div>
         <div>
           <label for="phone">Téléphone :</label>
-          <input type="phone" name="phone" id="phone" value="<?= $phone ?? '' ?>" placeholder="+33...">
+          <input type="phone" name="phone" id="phone" value="<?= $phone ?? '+336' ?>" placeholder="+33...">
           <p class="errorsMsg"><?= $errors['phone']; ?></p>
         </div>
         <div>
