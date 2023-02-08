@@ -23,7 +23,6 @@ try {
 return $pdo;
 
 
-
 // cd '270.1.23 TP 2'
 // DB_NAME='' DB_PWD='' php -S localhost:3000 
 
